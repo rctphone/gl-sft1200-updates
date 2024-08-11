@@ -1,0 +1,170 @@
+Package: libopenssl
+Version: 1.1.1w-1
+Depends: libc, zlib
+Source: package/openssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: libs
+Essential: yes
+Architecture: mips_siflower
+Installed-Size: 1002505
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL shared libraries, needed by other programs.
+Filename: libopenssl_1.1.1w-1_mips_siflower.ipk
+
+Package: zlib
+Version: 1.3.2-1
+Depends: libc
+Source: package/zlib
+License: Zlib
+LicenseFiles: LICENSE
+Section: libs
+Architecture: mips_siflower
+Installed-Size: 41007
+Description:  zlib is a lossless data-compression library.
+ This package includes the shared library.
+Filename: zlib_1.3.2-1_mips_siflower.ipk
+
+Package: amneziawg
+Version: 1.0.20260223-1
+Depends: libc, amneziawg-tools
+Source: package/amneziawg-tools
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: net
+Architecture: all
+Installed-Size: 96
+Description:  AmneziaWG is a fork of WireGuard with enhanced obfuscation capabilities
+ to bypass DPI. This metapackage includes userspace tools.
+Filename: amneziawg_1.0.20260223-1_all.ipk
+
+Package: shadowsocks-libev-server
+Version: 3.3.5-1
+Depends: libc, zlib, libpthread, libev, libpcre, libcares, libsodium, libmbedtls
+Source: feeds/gli_pub/shadowsocks-libev
+License: GPLv3
+LicenseFiles: LICENSE
+Section: net
+Maintainer: Jian Chang <aa65535@live.com>
+Architecture: mips_siflower
+Installed-Size: 230494
+Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
+Filename: shadowsocks-libev-server_3.3.5-1_mips_siflower.ipk
+
+Package: sft1200-cpu-ondemand
+Version: 1.0.0-1
+Depends: libc
+Source: package/sft1200-cpu-ondemand
+Section: utils
+Architecture: all
+Installed-Size: 761
+Description:  CPU frequency and IRQ optimization for SFT1200.
+ Sets ondemand governor 800-1100MHz, distributes IRQ/RPS across all cores.
+Filename: sft1200-cpu-ondemand_1.0.0-1_all.ipk
+
+Package: dropbear
+Version: 2025.89-1
+Depends: libc
+Alternatives: 100:/usr/bin/ssh-keygen:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
+Source: package/dropbear
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Section: net
+Architecture: mips_siflower
+Installed-Size: 150806
+Description:  A small SSH2 server/client designed for small memory environments.
+Filename: dropbear_2025.89-1_mips_siflower.ipk
+
+Package: amneziawg-tools
+Version: 1.0.20260223-1
+Depends: libc, kmod-udptunnel6, kmod-udptunnel4
+Source: package/amneziawg-tools
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: net
+Architecture: mips_siflower
+Installed-Size: 36583
+Description:  AmneziaWG userspace tools including awg command for configuration
+ and awg-quick for interface management.
+Filename: amneziawg-tools_1.0.20260223-1_mips_siflower.ipk
+
+Package: kmod-amneziawg
+Version: 4.14.90+1.0.20260322-1
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4
+Section: kernel
+Architecture: mips_siflower
+Description: AmneziaWG kernel module with DPI obfuscation (protocol 2.0)
+Filename: kmod-amneziawg_4.14.90+1.0.20260322-1_mips_siflower.ipk
+
+Package: outline-ss-server
+Version: 1.5.0-1
+Depends: libc, ca-bundle
+Source: feeds/packages/net/outline-ss-server
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: net
+Architecture: mips_siflower
+Installed-Size: 3346083
+Description:  The Outline Shadowsocks service
+Filename: outline-ss-server_1.5.0-1_mips_siflower.ipk
+
+Package: sft1200-network-tuning
+Version: 1.0.0-1
+Depends: libc
+Source: package/sft1200-network-tuning
+Section: utils
+Architecture: all
+Installed-Size: 666
+Description:  Network buffer, TCP, conntrack and memory tuning for SFT1200 VPN workloads.
+Filename: sft1200-network-tuning_1.0.0-1_all.ipk
+
+Package: zlib-dev
+Version: 1.3.2-1
+Depends: libc, zlib
+Source: package/zlib
+License: Zlib
+LicenseFiles: LICENSE
+Section: devel
+Architecture: mips_siflower
+Installed-Size: 84472
+Description:  zlib is a lossless data-compression library.
+ This package includes the development support files.
+Filename: zlib-dev_1.3.2-1_mips_siflower.ipk
+
+Package: libopenssl-conf
+Version: 1.1.1w-1
+Depends: libc, libopenssl
+Source: package/openssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: libs
+Essential: yes
+Architecture: mips_siflower
+Installed-Size: 3941
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package installs the OpenSSL configuration file /etc/ssl/openssl.cnf.
+Filename: libopenssl-conf_1.1.1w-1_mips_siflower.ipk
+
+Package: openssl-util
+Version: 1.1.1w-1
+Depends: libc, libopenssl, libopenssl-conf
+Source: package/openssl
+License: OpenSSL
+LicenseFiles: LICENSE
+Section: utils
+Essential: yes
+Architecture: mips_siflower
+Installed-Size: 237343
+Description:  The OpenSSL Project is a collaborative effort to develop a robust,
+ commercial-grade, full-featured, and Open Source toolkit implementing the
+ Transport Layer Security (TLS) protocol as well as a full-strength
+ general-purpose cryptography library.
+ This package contains the OpenSSL command-line utility.
+Filename: openssl-util_1.1.1w-1_mips_siflower.ipk
+
