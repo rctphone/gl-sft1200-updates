@@ -9,3 +9,8 @@ Package: dropbear_2022.82-6_mips_siflower
 Package: dropbearconvert_2022.82-6_mips_siflower
 /usr/bin/dropbearconvert
 
+Package: outline-ss-server_1.5.0-1_mips_siflower
+/usr/bin/outline-ss-server
+/etc/config/outline-ss-server.conf
+/etc/init.d/outline-ss-server
+

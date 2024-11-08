@@ -23,3 +23,15 @@ Installed-Size: 46321
 Description:  Utility for converting SSH keys
 Filename: dropbearconvert_2022.82-6_mips_siflower.ipk
 
+Package: outline-ss-server
+Version: 1.5.0-1
+Depends: libc, ca-bundle
+Source: feeds/packages/net/outline-ss-server
+License: Apache-2.0
+LicenseFiles: LICENSE
+Section: net
+Architecture: mips_siflower
+Installed-Size: 3346083
+Description:  The Outline Shadowsocks service
+Filename: outline-ss-server_1.5.0-1_mips_siflower.ipk
+
