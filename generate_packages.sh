@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#set -x
 # Function to extract the control file from an IPK package and append it to the output file
 extract_control_from_ipk() {
     ipk_file=$1

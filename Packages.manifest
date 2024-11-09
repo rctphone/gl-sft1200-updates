@@ -1,3 +1,9 @@
+Package: shadowsocks-libev-server_3.3.5-1_mips_siflower
+/usr/bin/ss-server
+/usr/lib/libmbedx509.so.2.16.12
+/usr/lib/libmbedtls.so.2.16.12
+/usr/lib/libmbedcrypto.so.2.16.12
+
 Package: dropbear_2022.82-6_mips_siflower
 /usr/sbin/dropbear
 /etc/config/dropbear
