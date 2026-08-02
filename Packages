@@ -106,6 +106,13 @@ Description:  CPU frequency and IRQ/RPS optimization for SFT1200.
  Distributes packet processing across all 4 MIPS InterAptiv cores via RPS/XPS.
 Filename: sft1200-cpu-perf_1.0.0-1_all.ipk
 
+Package: amneziawg-tools
+Version: 3.0.20260730-1
+Section: net
+Architecture: mips_siflower
+Description: AmneziaWG userspace tools (awg, awg-quick)
+Filename: amneziawg-tools_3.0.20260730-1_mips_siflower.ipk
+
 Package: dropbearconvert
 Version: 2026.94-1
 Depends: libc, zlib
@@ -133,6 +140,14 @@ Architecture: mips_siflower
 Description: AmneziaWG kernel module with DPI obfuscation (protocol 2.0)
 Filename: kmod-amneziawg_4.14.90+1.0.20260322-1_mips_siflower.ipk
 
+Package: kmod-amneziawg
+Version: 4.14.90+3.0.20260731-04-2
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4
+Section: kernel
+Architecture: mips_siflower
+Description: AmneziaWG v3 kernel module with DPI obfuscation
+Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-2_mips_siflower.ipk
+
 Package: openssh-sftp-server
 Version: 8.0p1-1
 Depends: libc, libopenssl, zlib
@@ -146,6 +161,14 @@ Installed-Size: 45640
 Description:  OpenSSH SFTP server.
 Filename: openssh-sftp-server_8.0p1-1_mips_siflower.ipk
 
+Package: amneziawg
+Version: 3.0.20260730-1
+Depends: amneziawg-tools
+Section: net
+Architecture: all
+Description: AmneziaWG VPN meta-package
+Filename: amneziawg_3.0.20260730-1_all.ipk
+
 Package: outline-ss-server
 Version: 1.5.0-1
 Depends: libc, ca-bundle
@@ -157,6 +180,14 @@ Architecture: mips_siflower
 Installed-Size: 3346083
 Description:  The Outline Shadowsocks service
 Filename: outline-ss-server_1.5.0-1_mips_siflower.ipk
+
+Package: kmod-amneziawg
+Version: 4.14.90+3.0.20260731-04-1
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4
+Section: kernel
+Architecture: mips_siflower
+Description: AmneziaWG v3 kernel module with DPI obfuscation
+Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-1_mips_siflower.ipk
 
 Package: sft1200-network-tuning
 Version: 1.0.0-1

@@ -38,6 +38,11 @@ Package: iperf3_3.20-1_mips_siflower
 Package: sft1200-cpu-perf_1.0.0-1_all
 /etc/init.d/cpu-perf
 
+Package: amneziawg-tools_3.0.20260730-1_mips_siflower
+/usr/bin/awg
+/usr/bin/awg-quick
+/lib/netifd/proto/amneziawg.sh
+
 Package: dropbearconvert_2026.94-1_mips_siflower
 /usr/bin/dropbearconvert
 
@@ -50,13 +55,23 @@ Package: kmod-amneziawg_4.14.90+1.0.20260322-1_mips_siflower
 /etc/modules.d/amneziawg
 /lib/modules/4.14.90/amneziawg.ko
 
+Package: kmod-amneziawg_4.14.90+3.0.20260731-04-2_mips_siflower
+/etc/modules.d/amneziawg
+/lib/modules/4.14.90/amneziawg.ko
+
 Package: openssh-sftp-server_8.0p1-1_mips_siflower
 /usr/lib/sftp-server
+
+Package: amneziawg_3.0.20260730-1_all
 
 Package: outline-ss-server_1.5.0-1_mips_siflower
 /usr/bin/outline-ss-server
 /etc/config/outline-ss-server.conf
 /etc/init.d/outline-ss-server
+
+Package: kmod-amneziawg_4.14.90+3.0.20260731-04-1_mips_siflower
+/etc/modules.d/amneziawg
+/lib/modules/4.14.90/amneziawg.ko
 
 Package: sft1200-network-tuning_1.0.0-1_all
 /etc/init.d/network-tuning
