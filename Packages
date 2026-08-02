@@ -1,13 +1,13 @@
 Package: libopenssl
 Version: 1.1.1w-1
-Depends: libc, zlib
+Depends: libc
 Source: package/openssl
 License: OpenSSL
 LicenseFiles: LICENSE
 Section: libs
 Essential: yes
 Architecture: mips_siflower
-Installed-Size: 1002505
+Installed-Size: 798636
 Description:  The OpenSSL Project is a collaborative effort to develop a robust,
  commercial-grade, full-featured, and Open Source toolkit implementing the
  Transport Layer Security (TLS) protocol as well as a full-strength
@@ -28,17 +28,25 @@ Description:  zlib is a lossless data-compression library.
  This package includes the shared library.
 Filename: zlib_1.3.2-1_mips_siflower.ipk
 
+Package: dropbear
+Version: 2026.94-1
+Depends: libc, zlib
+Alternatives: 100:/usr/bin/ssh-keygen:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
+Source: package/dropbear
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Section: net
+Architecture: mips_siflower
+Installed-Size: 153621
+Description:  A small SSH2 server/client designed for small memory environments.
+Filename: dropbear_2026.94-1_mips_siflower.ipk
+
 Package: amneziawg
 Version: 1.0.20260223-1
-Depends: libc, amneziawg-tools
-Source: package/amneziawg-tools
-License: GPL-2.0
-LicenseFiles: COPYING
+Depends: amneziawg-tools
 Section: net
 Architecture: all
-Installed-Size: 96
-Description:  AmneziaWG is a fork of WireGuard with enhanced obfuscation capabilities
- to bypass DPI. This metapackage includes userspace tools.
+Description: AmneziaWG VPN meta-package
 Filename: amneziawg_1.0.20260223-1_all.ipk
 
 Package: shadowsocks-libev-server
@@ -54,42 +62,67 @@ Installed-Size: 230494
 Description:  Shadowsocks-libev is a lightweight secured socks5 proxy for embedded devices and low end boxes.
 Filename: shadowsocks-libev-server_3.3.5-1_mips_siflower.ipk
 
+Package: sft1200-cpu-ondemand
+Version: 1.0.0-1
+Depends: libc
+Source: package/sft1200-cpu-ondemand
+Section: utils
+Architecture: all
+Installed-Size: 767
+Description:  CPU frequency and IRQ optimization for SFT1200.
+ Sets ondemand governor 800-1100MHz, distributes IRQ/RPS across all cores.
+Filename: sft1200-cpu-ondemand_1.0.0-1_all.ipk
+
 Package: dropbear
 Version: 2025.89-1
-Depends: libc
+Depends: libc, zlib
 Alternatives: 100:/usr/bin/ssh-keygen:/usr/sbin/dropbear, 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
 Source: package/dropbear
 License: MIT
 LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
 Section: net
 Architecture: mips_siflower
-Installed-Size: 150806
+Installed-Size: 163877
 Description:  A small SSH2 server/client designed for small memory environments.
 Filename: dropbear_2025.89-1_mips_siflower.ipk
+
+Package: iperf3
+Version: 3.20-1
+Depends: libatomic
+Section: net
+Architecture: mips_siflower
+Description: Internet Protocol bandwidth measuring tool
+Filename: iperf3_3.20-1_mips_siflower.ipk
 
 Package: sft1200-cpu-perf
 Version: 1.0.0-1
 Depends: libc
-Source: /packages/sft1200-cpu-perf
+Source: package/sft1200-cpu-perf
 Section: utils
 Architecture: all
-Installed-Size: 944
+Installed-Size: 951
 Description:  CPU frequency and IRQ/RPS optimization for SFT1200.
  Sets fixed 1000MHz via scaling_setspeed (userspace governor, no dynamic scaling).
  Distributes packet processing across all 4 MIPS InterAptiv cores via RPS/XPS.
 Filename: sft1200-cpu-perf_1.0.0-1_all.ipk
 
+Package: dropbearconvert
+Version: 2026.94-1
+Depends: libc, zlib
+Source: package/dropbear
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Section: utils
+Architecture: mips_siflower
+Installed-Size: 29955
+Description:  Utility for converting SSH keys
+Filename: dropbearconvert_2026.94-1_mips_siflower.ipk
+
 Package: amneziawg-tools
 Version: 1.0.20260223-1
-Depends: libc, kmod-udptunnel6, kmod-udptunnel4
-Source: package/amneziawg-tools
-License: GPL-2.0
-LicenseFiles: COPYING
 Section: net
 Architecture: mips_siflower
-Installed-Size: 36583
-Description:  AmneziaWG userspace tools including awg command for configuration
- and awg-quick for interface management.
+Description: AmneziaWG userspace tools (awg, awg-quick)
 Filename: amneziawg-tools_1.0.20260223-1_mips_siflower.ipk
 
 Package: kmod-amneziawg
@@ -99,6 +132,19 @@ Section: kernel
 Architecture: mips_siflower
 Description: AmneziaWG kernel module with DPI obfuscation (protocol 2.0)
 Filename: kmod-amneziawg_4.14.90+1.0.20260322-1_mips_siflower.ipk
+
+Package: openssh-sftp-server
+Version: 8.0p1-1
+Depends: libc, libopenssl, zlib
+Source: package/feeds/ssl/openssh
+License: BSD ISC
+LicenseFiles: LICENCE
+Section: net
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Architecture: mips_siflower
+Installed-Size: 45640
+Description:  OpenSSH SFTP server.
+Filename: openssh-sftp-server_8.0p1-1_mips_siflower.ipk
 
 Package: outline-ss-server
 Version: 1.5.0-1
@@ -115,10 +161,10 @@ Filename: outline-ss-server_1.5.0-1_mips_siflower.ipk
 Package: sft1200-network-tuning
 Version: 1.0.0-1
 Depends: libc
-Source: /packages/sft1200-network-tuning
+Source: package/sft1200-network-tuning
 Section: utils
 Architecture: all
-Installed-Size: 666
+Installed-Size: 668
 Description:  Network buffer, TCP, conntrack and memory tuning for SFT1200 VPN workloads.
 Filename: sft1200-network-tuning_1.0.0-1_all.ipk
 
@@ -154,18 +200,9 @@ Filename: libopenssl-conf_1.1.1w-1_mips_siflower.ipk
 
 Package: openssl-util
 Version: 1.1.1w-1
-Depends: libc, libopenssl, libopenssl-conf
-Source: package/openssl
-License: OpenSSL
-LicenseFiles: LICENSE
+Depends: libopenssl
 Section: utils
-Essential: yes
 Architecture: mips_siflower
-Installed-Size: 237343
-Description:  The OpenSSL Project is a collaborative effort to develop a robust,
- commercial-grade, full-featured, and Open Source toolkit implementing the
- Transport Layer Security (TLS) protocol as well as a full-strength
- general-purpose cryptography library.
- This package contains the OpenSSL command-line utility.
+Description: OpenSSL command line utility
 Filename: openssl-util_1.1.1w-1_mips_siflower.ipk
 

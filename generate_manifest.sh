@@ -8,7 +8,7 @@ generate_packages_manifest() {
     > "$manifest_file" # Empty the file before appending new data
 
     # Find all IPK files in the directory and process each one
-    find "$ipk_dir" -type f -name '*.ipk' | while read -r ipk; do
+    find "$ipk_dir" -maxdepth 1 -type f -name '*.ipk' | while read -r ipk; do
         filename=$(basename "$ipk")
         temp_dir=$(mktemp -d)
 
