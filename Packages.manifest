@@ -12,9 +12,6 @@ Package: openssh-sftp-server_10.2_p1-1_mips_siflower
 Package: sft1200-cpu-perf_1.0.0-2_all
 /etc/init.d/cpu-perf
 
-Package: libopenssl-conf_1.1.1zh-3_mips_siflower
-/etc/ssl/openssl.cnf
-
 Package: iperf3_3.20-2_mips_siflower
 /usr/bin/iperf3
 
@@ -26,6 +23,9 @@ Package: shadowsocks-libev-server_3.3.6-1_mips_siflower
 
 Package: sft1200-cpu-ondemand_1.0.0-1_all
 /etc/init.d/cpu-ondemand
+
+Package: libopenssl-conf_1.1.1zh-4_mips_siflower
+/etc/ssl/openssl.cnf
 
 Package: ca-certificates_20260601-1_all
 /etc/ssl/certs/IdenTrust_Public_Sector_Root_CA_1.crt
@@ -154,8 +154,9 @@ Package: kmod-amneziawg_4.14.90+3.0.20260731-04-3_mips_siflower
 /etc/modules.d/amneziawg
 /lib/modules/4.14.90/amneziawg.ko
 
-Package: openssl-util_1.1.1zh-3_mips_siflower
-/usr/bin/openssl
+Package: libopenssl_1.1.1zh-4_mips_siflower
+/usr/lib/libcrypto.so.1.1
+/usr/lib/libssl.so.1.1
 
 Package: zlib-dev_1.3.2-2_mips_siflower
 /usr/include/zlib.h
@@ -179,9 +180,8 @@ Package: gl-sft1200-amneziawg-compat_1.0.0-2_all
 Package: ca-bundle_20260601-1_all
 /etc/ssl/certs/ca-certificates.crt
 
-Package: libopenssl_1.1.1zh-3_mips_siflower
-/usr/lib/libcrypto.so.1.1
-/usr/lib/libssl.so.1.1
+Package: openssl-util_1.1.1zh-4_mips_siflower
+/usr/bin/openssl
 
 Package: sft1200-network-tuning_1.0.0-1_all
 /etc/init.d/network-tuning
