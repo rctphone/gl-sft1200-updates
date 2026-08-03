@@ -187,20 +187,6 @@ Filename: openssl-util_1.1.1zh-3_mips_siflower.ipk
 Size: 248786
 SHA256sum: 8528855b0d15de4580d159412800ac6ec2a1ac222dcb84974305357984e56aad
 
-Package: outline-ss-server
-Version: 1.5.0-1
-Depends: libc, ca-bundle
-Source: feeds/packages/net/outline-ss-server
-License: Apache-2.0
-LicenseFiles: LICENSE
-Section: net
-Architecture: mips_siflower
-Installed-Size: 3346083
-Description:  The Outline Shadowsocks service
-Filename: outline-ss-server_1.5.0-1_mips_siflower.ipk
-Size: 3324808
-SHA256sum: c78120b71f468887f3dba1daaab82c0d1fe80a67b56cda773fd63465826dcb1f
-
 Package: sft1200-boot-profiler
 Version: 1.0.0-6
 Depends: libc

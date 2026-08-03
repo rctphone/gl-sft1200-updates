@@ -179,11 +179,6 @@ Package: gl-sft1200-amneziawg-compat_1.0.0-2_all
 Package: ca-bundle_20260601-1_all
 /etc/ssl/certs/ca-certificates.crt
 
-Package: outline-ss-server_1.5.0-1_mips_siflower
-/usr/bin/outline-ss-server
-/etc/config/outline-ss-server.conf
-/etc/init.d/outline-ss-server
-
 Package: libopenssl_1.1.1zh-3_mips_siflower
 /usr/lib/libcrypto.so.1.1
 /usr/lib/libssl.so.1.1
