@@ -1,11 +1,4 @@
-Package: libopenssl_1.1.1w-1_mips_siflower
-/usr/lib/libcrypto.so.1.1
-/usr/lib/libssl.so.1.1
-
-Package: zlib_1.3.2-1_mips_siflower
-/usr/lib/libz.so.1.3.2
-
-Package: dropbear_2026.94-1_mips_siflower
+Package: dropbear_2026.94-6_mips_siflower
 /usr/sbin/dropbear
 /etc/uci-defaults/50-dropbear
 /etc/config/dropbear
@@ -13,78 +6,211 @@ Package: dropbear_2026.94-1_mips_siflower
 /lib/upgrade/keep.d/dropbear
 /lib/preinit/99_10_failsafe_dropbear
 
-Package: amneziawg_1.0.20260223-1_all
+Package: openssh-sftp-server_10.2_p1-1_mips_siflower
+/usr/lib/sftp-server
 
-Package: shadowsocks-libev-server_3.3.5-1_mips_siflower
+Package: sft1200-cpu-perf_1.0.0-2_all
+/etc/init.d/cpu-perf
+
+Package: libopenssl-conf_1.1.1zh-3_mips_siflower
+/etc/ssl/openssl.cnf
+
+Package: iperf3_3.20-2_mips_siflower
+/usr/bin/iperf3
+
+Package: zlib_1.3.2-2_mips_siflower
+/usr/lib/libz.so.1.3.2
+
+Package: shadowsocks-libev-server_3.3.6-1_mips_siflower
 /usr/bin/ss-server
-/usr/lib/libmbedx509.so.2.16.12
-/usr/lib/libmbedtls.so.2.16.12
-/usr/lib/libmbedcrypto.so.2.16.12
 
 Package: sft1200-cpu-ondemand_1.0.0-1_all
 /etc/init.d/cpu-ondemand
 
-Package: dropbear_2025.89-1_mips_siflower
-/usr/sbin/dropbear
-/etc/uci-defaults/50-dropbear
-/etc/config/dropbear
-/etc/init.d/dropbear
-/lib/upgrade/keep.d/dropbear
-/lib/preinit/99_10_failsafe_dropbear
+Package: ca-certificates_20260601-1_all
+/etc/ssl/certs/IdenTrust_Public_Sector_Root_CA_1.crt
+/etc/ssl/certs/Amazon_Root_CA_3.crt
+/etc/ssl/certs/GlobalSign_Root_E46.crt
+/etc/ssl/certs/Security_Communication_ECC_RootCA1.crt
+/etc/ssl/certs/CFCA_EV_ROOT.crt
+/etc/ssl/certs/ANF_Secure_Server_Root_CA.crt
+/etc/ssl/certs/Amazon_Root_CA_2.crt
+/etc/ssl/certs/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt
+/etc/ssl/certs/e-Szigno_Root_CA_2017.crt
+/etc/ssl/certs/Hongkong_Post_Root_CA_3.crt
+/etc/ssl/certs/UCA_Global_G2_Root.crt
+/etc/ssl/certs/Amazon_Root_CA_1.crt
+/etc/ssl/certs/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt
+/etc/ssl/certs/Microsec_e-Szigno_Root_CA_2009.crt
+/etc/ssl/certs/Starfield_Services_Root_Certificate_Authority_-_G2.crt
+/etc/ssl/certs/USERTrust_ECC_Certification_Authority.crt
+/etc/ssl/certs/Buypass_Class_3_Root_CA.crt
+/etc/ssl/certs/Amazon_Root_CA_4.crt
+/etc/ssl/certs/Telekom_Security_TLS_ECC_Root_2020.crt
+/etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_ECC.crt
+/etc/ssl/certs/emSign_Root_CA_-_C1.crt
+/etc/ssl/certs/Atos_TrustedRoot_2011.crt
+/etc/ssl/certs/Certainly_Root_E1.crt
+/etc/ssl/certs/SSL.com_Root_Certification_Authority_RSA.crt
+/etc/ssl/certs/COMODO_RSA_Certification_Authority.crt
+/etc/ssl/certs/IdenTrust_Commercial_Root_CA_1.crt
+/etc/ssl/certs/AC_RAIZ_FNMT-RCM.crt
+/etc/ssl/certs/DigiCert_Assured_ID_Root_G3.crt
+/etc/ssl/certs/GTS_Root_R1.crt
+/etc/ssl/certs/TrustAsia_Global_Root_CA_G4.crt
+/etc/ssl/certs/Go_Daddy_Root_Certificate_Authority_-_G2.crt
+/etc/ssl/certs/HiPKI_Root_CA_-_G1.crt
+/etc/ssl/certs/TWCA_Global_Root_CA.crt
+/etc/ssl/certs/QuoVadis_Root_CA_3_G3.crt
+/etc/ssl/certs/DigiCert_Assured_ID_Root_G2.crt
+/etc/ssl/certs/Telia_Root_CA_v2.crt
+/etc/ssl/certs/DigiCert_Trusted_Root_G4.crt
+/etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R5.crt
+/etc/ssl/certs/D-TRUST_EV_Root_CA_2_2023.crt
+/etc/ssl/certs/Starfield_Root_Certificate_Authority_-_G2.crt
+/etc/ssl/certs/Izenpe.com.crt
+/etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_EV_2009.crt
+/etc/ssl/certs/GTS_Root_R3.crt
+/etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R4.crt
+/etc/ssl/certs/emSign_ECC_Root_CA_-_G3.crt
+/etc/ssl/certs/TrustAsia_TLS_RSA_Root_CA.crt
+/etc/ssl/certs/NAVER_Global_Root_Certification_Authority.crt
+/etc/ssl/certs/D-TRUST_BR_Root_CA_1_2020.crt
+/etc/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt
+/etc/ssl/certs/ePKI_Root_Certification_Authority.crt
+/etc/ssl/certs/Atos_TrustedRoot_Root_CA_RSA_TLS_2021.crt
+/etc/ssl/certs/GDCA_TrustAUTH_R5_ROOT.crt
+/etc/ssl/certs/TrustAsia_Global_Root_CA_G3.crt
+/etc/ssl/certs/ISRG_Root_X1.crt
+/etc/ssl/certs/Certum_Trusted_Network_CA.crt
+/etc/ssl/certs/SSL.com_Root_Certification_Authority_ECC.crt
+/etc/ssl/certs/DigiCert_Global_Root_G3.crt
+/etc/ssl/certs/GTS_Root_R4.crt
+/etc/ssl/certs/certSIGN_Root_CA_G2.crt
+/etc/ssl/certs/CA_Disig_Root_R2.crt
+/etc/ssl/certs/OISTE_WISeKey_Global_Root_GB_CA.crt
+/etc/ssl/certs/ISRG_Root_X2.crt
+/etc/ssl/certs/Certum_EC-384_CA.crt
+/etc/ssl/certs/DigiCert_Global_Root_G2.crt
+/etc/ssl/certs/QuoVadis_Root_CA_1_G3.crt
+/etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_R46.crt
+/etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_E46.crt
+/etc/ssl/certs/Microsoft_ECC_Root_Certificate_Authority_2017.crt
+/etc/ssl/certs/vTrus_ECC_Root_CA.crt
+/etc/ssl/certs/Telekom_Security_TLS_RSA_Root_2023.crt
+/etc/ssl/certs/SecureSign_Root_CA12.crt
+/etc/ssl/certs/HARICA_TLS_ECC_Root_CA_2021.crt
+/etc/ssl/certs/ACCVRAIZ1.crt
+/etc/ssl/certs/Buypass_Class_2_Root_CA.crt
+/etc/ssl/certs/Microsoft_RSA_Root_Certificate_Authority_2017.crt
+/etc/ssl/certs/GlobalSign_Root_CA_-_R6.crt
+/etc/ssl/certs/Certum_Trusted_Network_CA_2.crt
+/etc/ssl/certs/TWCA_Root_Certification_Authority.crt
+/etc/ssl/certs/DigiCert_TLS_RSA4096_Root_G5.crt
+/etc/ssl/certs/SSL.com_TLS_ECC_Root_CA_2022.crt
+/etc/ssl/certs/Security_Communication_RootCA2.crt
+/etc/ssl/certs/SecureSign_Root_CA15.crt
+/etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_2009.crt
+/etc/ssl/certs/GlobalSign_Root_CA_-_R3.crt
+/etc/ssl/certs/OISTE_Server_Root_RSA_G1.crt
+/etc/ssl/certs/USERTrust_RSA_Certification_Authority.crt
+/etc/ssl/certs/vTrus_Root_CA.crt
+/etc/ssl/certs/emSign_Root_CA_-_G1.crt
+/etc/ssl/certs/SSL.com_TLS_RSA_Root_CA_2022.crt
+/etc/ssl/certs/SecureSign_Root_CA14.crt
+/etc/ssl/certs/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt
+/etc/ssl/certs/COMODO_ECC_Certification_Authority.crt
+/etc/ssl/certs/Entrust_Root_Certification_Authority.crt
+/etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt
+/etc/ssl/certs/SwissSign_RSA_TLS_Root_CA_2022_-_1.crt
+/etc/ssl/certs/DigiCert_TLS_ECC_P384_Root_G5.crt
+/etc/ssl/certs/HARICA_TLS_RSA_Root_CA_2021.crt
+/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.crt
+/etc/ssl/certs/emSign_ECC_Root_CA_-_C3.crt
+/etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt
+/etc/ssl/certs/D-TRUST_BR_Root_CA_2_2023.crt
+/etc/ssl/certs/SZAFIR_ROOT_CA2.crt
+/etc/ssl/certs/Actalis_Authentication_Root_CA.crt
+/etc/ssl/certs/UCA_Extended_Validation_Root.crt
+/etc/ssl/certs/Atos_TrustedRoot_Root_CA_ECC_TLS_2021.crt
+/etc/ssl/certs/T-TeleSec_GlobalRoot_Class_3.crt
+/etc/ssl/certs/QuoVadis_Root_CA_2_G3.crt
+/etc/ssl/certs/Certigna_Root_CA.crt
+/etc/ssl/certs/TWCA_CYBER_Root_CA.crt
+/etc/ssl/certs/BJCA_Global_Root_CA2.crt
+/etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt
+/etc/ssl/certs/TunTrust_Root_CA.crt
+/etc/ssl/certs/TrustAsia_TLS_ECC_Root_CA.crt
+/etc/ssl/certs/OISTE_WISeKey_Global_Root_GC_CA.crt
+/etc/ssl/certs/D-TRUST_EV_Root_CA_1_2020.crt
+/etc/ssl/certs/e-Szigno_TLS_Root_CA_2023.crt
+/etc/ssl/certs/Certum_Trusted_Root_CA.crt
+/etc/ssl/certs/OISTE_Server_Root_ECC_G1.crt
+/etc/ssl/certs/Certainly_Root_R1.crt
+/etc/ssl/certs/BJCA_Global_Root_CA1.crt
+/etc/ssl/certs/GlobalSign_Root_R46.crt
 
-Package: iperf3_3.20-1_mips_siflower
-/usr/bin/iperf3
-
-Package: sft1200-cpu-perf_1.0.0-1_all
-/etc/init.d/cpu-perf
-
-Package: amneziawg-tools_3.0.20260730-1_mips_siflower
-/usr/bin/awg
-/usr/bin/awg-quick
-/lib/netifd/proto/amneziawg.sh
-
-Package: dropbearconvert_2026.94-1_mips_siflower
-/usr/bin/dropbearconvert
-
-Package: amneziawg-tools_1.0.20260223-1_mips_siflower
-/usr/bin/awg
-/usr/bin/awg-quick
-/lib/netifd/proto/amneziawg.sh
-
-Package: kmod-amneziawg_4.14.90+1.0.20260322-1_mips_siflower
+Package: kmod-amneziawg_4.14.90+3.0.20260731-04-3_mips_siflower
 /etc/modules.d/amneziawg
 /lib/modules/4.14.90/amneziawg.ko
 
-Package: kmod-amneziawg_4.14.90+3.0.20260731-04-2_mips_siflower
-/etc/modules.d/amneziawg
-/lib/modules/4.14.90/amneziawg.ko
+Package: openssl-util_1.1.1zh-3_mips_siflower
+/usr/bin/openssl
 
-Package: openssh-sftp-server_8.0p1-1_mips_siflower
-/usr/lib/sftp-server
+Package: zlib-dev_1.3.2-2_mips_siflower
+/usr/include/zlib.h
+/usr/include/zconf.h
+/usr/lib/pkgconfig/zlib.pc
+/usr/lib/libz.a
 
-Package: amneziawg_3.0.20260730-1_all
+Package: gl-sft1200-amneziawg-compat_1.0.0-2_all
+/usr/bin/wgserver_set_append
+/usr/bin/wgclient_set_append
+/usr/lib/oui-httpd/rpc/wg-client
+/usr/lib/lua/gl_sft1200_awg/params.lua
+/usr/lib/gl-sft1200-amneziawg/manifest
+/usr/lib/gl-sft1200-amneziawg/tests/params_test.lua
+/usr/lib/gl-sft1200-amneziawg/tests/synthetic.sh
+/usr/lib/gl-sft1200-amneziawg/awg-compat.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wgclient.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wgserver.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wg-client-validator.lua
+
+Package: ca-bundle_20260601-1_all
+/etc/ssl/certs/ca-certificates.crt
 
 Package: outline-ss-server_1.5.0-1_mips_siflower
 /usr/bin/outline-ss-server
 /etc/config/outline-ss-server.conf
 /etc/init.d/outline-ss-server
 
-Package: kmod-amneziawg_4.14.90+3.0.20260731-04-1_mips_siflower
-/etc/modules.d/amneziawg
-/lib/modules/4.14.90/amneziawg.ko
+Package: libopenssl_1.1.1zh-3_mips_siflower
+/usr/lib/libcrypto.so.1.1
+/usr/lib/libssl.so.1.1
 
 Package: sft1200-network-tuning_1.0.0-1_all
 /etc/init.d/network-tuning
 
-Package: zlib-dev_1.3.2-1_mips_siflower
-/usr/include/zlib.h
-/usr/include/zconf.h
-/usr/lib/pkgconfig/zlib.pc
-/usr/lib/libz.a
+Package: sft1200-boot-profiler_1.0.0-6_all
+/usr/sbin/sft1200-boot-profile
+/usr/lib/sft1200-boot-profiler/collect-once.sh
+/usr/lib/sft1200-boot-profiler/manifest
+/usr/lib/sft1200-boot-profiler/record-event.sh
+/usr/lib/sft1200-boot-profiler/templates/rc.common
+/usr/lib/sft1200-boot-profiler/templates/rc.common.stock
+/usr/lib/sft1200-boot-profiler/boot-profiler.sh
+/etc/init.d/zz-sft1200-boot-profiler
+/etc/hotplug.d/net/00-sft1200-boot-profiler
+/etc/hotplug.d/iface/00-sft1200-boot-profiler
+/etc/hotplug.d/wireguard/00-sft1200-boot-profiler
 
-Package: libopenssl-conf_1.1.1w-1_mips_siflower
-/etc/ssl/openssl.cnf
+Package: dropbearconvert_2026.94-6_mips_siflower
+/usr/bin/dropbearconvert
 
-Package: openssl-util_1.1.1w-1_mips_siflower
-/usr/bin/openssl
+Package: amneziawg-tools_3.0.20260730-2_mips_siflower
+/usr/bin/awg
+/usr/bin/awg-quick
+/lib/netifd/proto/amneziawg.sh
+
+Package: amneziawg_3.0.20260730-2_all
 
