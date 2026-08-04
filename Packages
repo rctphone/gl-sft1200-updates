@@ -65,34 +65,6 @@ Filename: dropbear_2026.94-7_mips_siflower.ipk
 Size: 151713
 SHA256sum: 32adb74d6a340397929ced1130b0abe377a18357e6116716f8fe40f73ba426d6
 
-Package: sft1200-modem-ids
-Version: 1.0.0-3
-Depends: libc
-Source: package/sft1200-modem-ids
-License: MIT
-Section: net
-Maintainer: GL-SFT1200 port
-Architecture: all
-Installed-Size: 49418
-Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
- 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
- boot and on USB hotplug, and then reconciles interface-to-driver assignment
- because a dynamic id cannot carry an interface number.
- .
- Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
- which neither the stock firmware nor mainline Linux knows.  Devices outside
- the table are never touched.
- .
- GL's userspace keeps modem vendor whitelists of its own, in shell, separate
- from the kernel tables, and get_modem_bus() answers with a non-existent bus
- for a modem that is not in them.  That list is extended in place with the ids
- of attached devices this table knows, re-asserted at boot and on hotplug
- because a firmware upgrade restores it, and restored exactly on removal.  GL's
- two hotplug/recovery whitelists are opt-in; see /etc/sft1200-modem-ids.conf.
-Filename: sft1200-modem-ids_1.0.0-3_all.ipk
-Size: 51166
-SHA256sum: 5065ad9b48827dfc56584ea69fcbd9713175bd17c8564e9d6c8133460b02f011
-
 Package: sft1200-cpu-ondemand
 Version: 1.0.0-3
 Depends: libc
@@ -144,6 +116,21 @@ Description:  Iperf is a modern alternative for measuring TCP and UDP bandwidth
 Filename: iperf3_3.21-1_mips_siflower.ipk
 Size: 54670
 SHA256sum: ba7fc8c19a53d9bda27219d839de35252f6b8b5d3a93026a7c3f755267b25c78
+
+Package: uqmi
+Version: 2025-07-30-7914da43-1
+Depends: libc, libubox, libblobmsg-json
+Source: package/uqmi
+License: GPL-2.0
+Section: net
+Maintainer: Matti Laakso <malaakso@elisanet.fi>
+Architecture: mips_siflower
+Installed-Size: 49348
+Description:  uqmi is a command line tool for controlling mobile broadband modems using
+ the QMI-protocol.
+Filename: uqmi_2025-07-30-7914da43-1_mips_siflower.ipk
+Size: 50198
+SHA256sum: 7f3eb87d93db2534d4fc1a6d517a9b6efdab1c48040af166b3941655d054b340
 
 Package: libopenssl-conf
 Version: 1.1.1zh-4
@@ -248,6 +235,34 @@ Filename: zlib-dev_1.3.2-2_mips_siflower.ipk
 Size: 84667
 SHA256sum: 2e40eec5bba2154ec215f930bf0be8c1afa9c988e964575aef39d10629acb41e
 
+Package: sft1200-modem-ids
+Version: 1.0.0-4
+Depends: libc
+Source: package/sft1200-modem-ids
+License: MIT
+Section: net
+Maintainer: GL-SFT1200 port
+Architecture: all
+Installed-Size: 49398
+Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
+ 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
+ boot and on USB hotplug, and then reconciles interface-to-driver assignment
+ because a dynamic id cannot carry an interface number.
+ .
+ Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
+ which neither the stock firmware nor mainline Linux knows.  Devices outside
+ the table are never touched.
+ .
+ GL's userspace keeps modem vendor whitelists of its own, in shell, separate
+ from the kernel tables, and get_modem_bus() answers with a non-existent bus
+ for a modem that is not in them.  That list is extended in place with the ids
+ of attached devices this table knows, re-asserted at boot and on hotplug
+ because a firmware upgrade restores it, and restored exactly on removal.  GL's
+ two hotplug/recovery whitelists are opt-in; see /etc/sft1200-modem-ids.conf.
+Filename: sft1200-modem-ids_1.0.0-4_all.ipk
+Size: 51124
+SHA256sum: 18949b9c2cf0a07f5ae263b8e83f7179b71197ecf9ef46763ae7beb06b9f1be1
+
 Package: ca-bundle
 Version: 20260601-1
 Depends: libc
@@ -279,16 +294,6 @@ Filename: openssl-util_1.1.1zh-4_mips_siflower.ipk
 Size: 255083
 SHA256sum: 6b564efe1e688416e23a801fe7e6be1e29e0bb013bdbecce43524d93f5158ecc
 
-Package: kmod-wireguard
-Version: 4.14.90+1.0.20211208-2
-Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel4, kmod-udptunnel6
-Section: kernel
-Architecture: mips_siflower
-Description: WireGuard kernel module (upstream 1.0.20211208, rebuilt with target flags)
-Filename: kmod-wireguard_4.14.90+1.0.20211208-2_mips_siflower.ipk
-Size: 69061
-SHA256sum: 6512930c241619bad67409d13f286a663e3530c804bd9bc721be4a6ead3843a7
-
 Package: amneziawg-tools
 Version: 3.0.20260730-2
 Depends: libc, kmod-udptunnel6, kmod-udptunnel4
@@ -296,8 +301,8 @@ Section: net
 Architecture: mips_siflower
 Description: AmneziaWG userspace tools (awg, awg-quick)
 Filename: amneziawg-tools_3.0.20260730-2_mips_siflower.ipk
-Size: 41570
-SHA256sum: 406412e7af853b5d0fb43f43bbce638f671a3ca2beae119ebd31c1f8cf5844ea
+Size: 41553
+SHA256sum: 041c0d423c0af21e23cfb05a2caa97b9900894c1d0e9dcb53fdbf1f9ec4ce4f5
 
 Package: amneziawg
 Version: 3.0.20260730-2
@@ -306,8 +311,8 @@ Section: net
 Architecture: all
 Description: AmneziaWG VPN meta-package
 Filename: amneziawg_3.0.20260730-2_all.ipk
-Size: 631
-SHA256sum: f9a86388c99a269bebca847ef87ddaf83395e037f76eeba650286df0d42f0d53
+Size: 622
+SHA256sum: d4127a4e6ea628851eff8deb3889d7ee70a8f60a788b8db18ba72da868e45e76
 
 Package: kmod-amneziawg
 Version: 4.14.90+3.0.20260731-04-5
@@ -316,8 +321,8 @@ Section: kernel
 Architecture: mips_siflower
 Description: AmneziaWG v3 kernel module with DPI obfuscation
 Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-5_mips_siflower.ipk
-Size: 141154
-SHA256sum: 971ca5211d5e961c76c35e3f78c4c56367de307871abbbf241b8904e3cbcc493
+Size: 141188
+SHA256sum: cf04762912ee577cfac1b368e8a3d5c023158140de4cc1cd5bc1e9c6f725f4d2
 
 Package: dropbearconvert
 Version: 2026.94-7

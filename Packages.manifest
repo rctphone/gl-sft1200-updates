@@ -4,6 +4,9 @@ Package: shadowsocks-libev-server_3.3.6-3_mips_siflower
 Package: openssh-sftp-server_10.2_p1-1_mips_siflower
 /usr/lib/sftp-server
 
+Package: curl_8.17.0-1_mips_siflower
+/usr/bin/curl
+
 Package: sft1200-amneziawg-compat_1.0.0-3_all
 /usr/bin/wgserver_set_append
 /usr/bin/wgclient_set_append
@@ -42,6 +45,11 @@ Package: zlib_1.3.2-2_mips_siflower
 
 Package: iperf3_3.21-1_mips_siflower
 /usr/bin/iperf3
+
+Package: uqmi_2025-07-30-7914da43-1_mips_siflower
+/sbin/uqmi
+/lib/netifd/proto/qmi.sh
+/lib/netifd/proto/qmistock.sh
 
 Package: libopenssl-conf_1.1.1zh-4_mips_siflower
 /etc/ssl/openssl.cnf
@@ -188,11 +196,27 @@ Package: sft1200-boot-profiler_1.1.0-3_all
 /etc/hotplug.d/iface/00-sft1200-boot-profiler
 /etc/hotplug.d/wireguard/00-sft1200-boot-profiler
 
+Package: libcurl_8.17.0-1_mips_siflower
+/usr/lib/libcurl.so.4.8.0
+
 Package: zlib-dev_1.3.2-2_mips_siflower
 /usr/include/zlib.h
 /usr/include/zconf.h
 /usr/lib/pkgconfig/zlib.pc
 /usr/lib/libz.a
+
+Package: sft1200-modem-ids_1.0.0-4_all
+/usr/sbin/sft1200-modem-ids
+/usr/lib/sft1200-modem-ids/tests/synthetic.sh
+/usr/lib/sft1200-modem-ids/modem-ids.sh
+/usr/lib/sft1200-modem-ids/gl-whitelist.sh
+/usr/share/sft1200-modem-ids/ids.tab
+/etc/init.d/sft1200-modem-ids
+/etc/sft1200-modem-ids.conf
+/etc/hotplug.d/usb/20-sft1200-modem-ids
+
+Package: libgpg-error_1.61-1_mips_siflower
+/usr/lib/libgpg-error.so.0.42.1
 
 Package: ca-bundle_20260601-1_all
 /etc/ssl/certs/ca-certificates.crt
@@ -200,16 +224,8 @@ Package: ca-bundle_20260601-1_all
 Package: openssl-util_1.1.1zh-4_mips_siflower
 /usr/bin/openssl
 
-Package: kmod-amneziawg_4.14.90+3.0.20260731-04-4_mips_siflower
-/usr/sbin/awg-skb-layout
-/usr/sbin/awg-kmod-select
-/usr/lib/amneziawg/variants/amneziawg-extended.ko
-/usr/lib/amneziawg/variants/amneziawg-short.ko
-
-Package: kmod-wireguard_4.14.90+1.0.20211208-2_mips_siflower
-/usr/sbin/wg-kmod-install
-/usr/sbin/wg-skb-layout
-/usr/lib/wireguard/wireguard.ko
+Package: libgcrypt_1.12.2-1_mips_siflower
+/usr/lib/libgcrypt.so.20.7.2
 
 Package: amneziawg-tools_3.0.20260730-2_mips_siflower
 /usr/bin/awg
