@@ -1,23 +1,17 @@
-Package: sft1200-modem-ids
-Version: 1.0.0-2
-Depends: libc
-Source: package/sft1200-modem-ids
-License: MIT
+Package: shadowsocks-libev-server
+Version: 3.3.6-3
+Depends: libc, libpthread
+Source: package/shadowsocks-libev
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
 Section: net
-Maintainer: GL-SFT1200 port
-Architecture: all
-Installed-Size: 31294
-Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
- 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
- boot and on USB hotplug, and then reconciles interface-to-driver assignment
- because a dynamic id cannot carry an interface number.
- .
- Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
- which neither the stock firmware nor mainline Linux knows.  Devices outside
- the table are never touched.
-Filename: sft1200-modem-ids_1.0.0-2_all.ipk
-Size: 32454
-SHA256sum: 433a7489902baaec8a3966c7f634edb39d1af95d50da3a33dade0530acf16dae
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+Architecture: mips_siflower
+Installed-Size: 537113
+Description:  The lightweight C Shadowsocks server for embedded and low-end devices.
+Filename: shadowsocks-libev-server_3.3.6-3_mips_siflower.ipk
+Size: 537239
+SHA256sum: 795621a8931439f5d9d834f2b8787cab56d1f358bf8429c197f546f32a025b80
 
 Package: openssh-sftp-server
 Version: 10.2_p1-1
@@ -71,20 +65,33 @@ Filename: dropbear_2026.94-7_mips_siflower.ipk
 Size: 151713
 SHA256sum: 32adb74d6a340397929ced1130b0abe377a18357e6116716f8fe40f73ba426d6
 
-Package: shadowsocks-libev-server
-Version: 3.3.6-2
-Depends: libc, libpthread
-Source: package/shadowsocks-libev
-License: GPL-3.0-or-later
-LicenseFiles: LICENSE
+Package: sft1200-modem-ids
+Version: 1.0.0-3
+Depends: libc
+Source: package/sft1200-modem-ids
+License: MIT
 Section: net
-Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
-Architecture: mips_siflower
-Installed-Size: 603638
-Description:  The lightweight C Shadowsocks server for embedded and low-end devices.
-Filename: shadowsocks-libev-server_3.3.6-2_mips_siflower.ipk
-Size: 603685
-SHA256sum: 46a408ad816df7ce880a25f20912f1e8983f2feebb7e8d146d893c4fd0061d06
+Maintainer: GL-SFT1200 port
+Architecture: all
+Installed-Size: 49418
+Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
+ 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
+ boot and on USB hotplug, and then reconciles interface-to-driver assignment
+ because a dynamic id cannot carry an interface number.
+ .
+ Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
+ which neither the stock firmware nor mainline Linux knows.  Devices outside
+ the table are never touched.
+ .
+ GL's userspace keeps modem vendor whitelists of its own, in shell, separate
+ from the kernel tables, and get_modem_bus() answers with a non-existent bus
+ for a modem that is not in them.  That list is extended in place with the ids
+ of attached devices this table knows, re-asserted at boot and on hotplug
+ because a firmware upgrade restores it, and restored exactly on removal.  GL's
+ two hotplug/recovery whitelists are opt-in; see /etc/sft1200-modem-ids.conf.
+Filename: sft1200-modem-ids_1.0.0-3_all.ipk
+Size: 51166
+SHA256sum: 5065ad9b48827dfc56584ea69fcbd9713175bd17c8564e9d6c8133460b02f011
 
 Package: sft1200-cpu-ondemand
 Version: 1.0.0-3
@@ -169,16 +176,6 @@ Filename: ca-certificates_20260601-1_all.ipk
 Size: 116704
 SHA256sum: 6807e28ba5a81795d4e6e9253fc8ff4fa51222595daba0c57f8a6c72666fe360
 
-Package: kmod-amneziawg
-Version: 4.14.90+3.0.20260731-04-3
-Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4, kmod-ipt-hashlimit
-Section: kernel
-Architecture: mips_siflower
-Description: AmneziaWG v3 kernel module with DPI obfuscation
-Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-3_mips_siflower.ipk
-Size: 66561
-SHA256sum: eb2a909dde3cbe0c90331d46b8eb63f47882272081287f4ba4b7e44b6b241daf
-
 Package: libopenssl
 Version: 1.1.1zh-4
 Depends: libc
@@ -197,6 +194,44 @@ Description:  The OpenSSL Project is a collaborative effort to develop a robust,
 Filename: libopenssl_1.1.1zh-4_mips_siflower.ipk
 Size: 1178504
 SHA256sum: 113ffa3d2524e458e5e5c5d3494d1d65ad6569f84a766d1985c0fec7c0150511
+
+Package: sft1200-boot-profiler
+Version: 1.1.0-3
+Depends: libc
+Source: package/sft1200-boot-profiler
+License: MIT
+Section: utils
+Maintainer: GL-SFT1200 port
+Architecture: all
+Installed-Size: 20452
+Description:  Records monotonic start/end times and return codes for every OpenWrt init
+ script, plus netifd, kernel-network and WireGuard hotplug milestones.  A late
+ init service saves the raw evidence under /root/boot-profiles after each boot,
+ keeping the five most recent.  Each profile carries a "capture-seq" file that
+ orders it; profiles written by an earlier release have none and are numbered
+ from their mtimes, once, the first time this release prunes.
+ .
+ The same rc.common hook releases the leaf init scripts listed in
+ /etc/sft1200-boot-async.list from the strictly sequential procd rcS queue.
+ This is enabled on install and can be turned off at any time with
+ "sft1200-boot-profile async-off"; only the "boot" action is affected, so
+ "/etc/init.d/<name> start" keeps its synchronous behaviour.
+ .
+ It also edits one vendor file that no package owns,
+ /lib/functions/gl_util.sh.  It inserts a complete arm of its own as the
+ first arm of the model dispatch in wait_for_wifi_ready(), so nginx stops
+ sleeping 10.1s polling an empty radio list.  No existing arm is read or
+ changed, and a file that already names sft1200 there is left alone.  That
+ file is sourced from /lib/preinit, so the rewrite is verified before it is
+ renamed into place.  "sft1200-boot-profile wifiwait-off" takes the arm back
+ out again -- by removing those five lines, so any later edit to the rest of
+ the file survives -- and stops it being re-applied.  A copy of the original
+ is kept as a cross-check only.  With async dispatch on -- the default -- this does not
+ shorten the boot; it makes the LuCI / GL web UI answer about ten seconds
+ sooner.
+Filename: sft1200-boot-profiler_1.1.0-3_all.ipk
+Size: 22334
+SHA256sum: 227688cb480fbfa51eb04df51977a5ca343e59236f09c6473ae9e69e0ce3e72f
 
 Package: zlib-dev
 Version: 1.3.2-2
@@ -244,6 +279,26 @@ Filename: openssl-util_1.1.1zh-4_mips_siflower.ipk
 Size: 255083
 SHA256sum: 6b564efe1e688416e23a801fe7e6be1e29e0bb013bdbecce43524d93f5158ecc
 
+Package: kmod-amneziawg
+Version: 4.14.90+3.0.20260731-04-4
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4, kmod-ipt-hashlimit
+Section: kernel
+Architecture: mips_siflower
+Description: AmneziaWG v3 kernel module with DPI obfuscation
+Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-4_mips_siflower.ipk
+Size: 141177
+SHA256sum: f73946c38794a965e67374b614dc5c8fa582adbc71b37b0640c215039e2fc14f
+
+Package: kmod-wireguard
+Version: 4.14.90+1.0.20211208-2
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel4, kmod-udptunnel6
+Section: kernel
+Architecture: mips_siflower
+Description: WireGuard kernel module (upstream 1.0.20211208, rebuilt with target flags)
+Filename: kmod-wireguard_4.14.90+1.0.20211208-2_mips_siflower.ipk
+Size: 69061
+SHA256sum: 6512930c241619bad67409d13f286a663e3530c804bd9bc721be4a6ead3843a7
+
 Package: amneziawg-tools
 Version: 3.0.20260730-2
 Depends: libc, kmod-udptunnel6, kmod-udptunnel4
@@ -277,26 +332,4 @@ Description:  Utility for converting SSH keys
 Filename: dropbearconvert_2026.94-7_mips_siflower.ipk
 Size: 30705
 SHA256sum: c4369186557fe2771a66d6bcce1d0f89f0ab761d84d3d8a504511d55f3fa1b62
-
-Package: sft1200-boot-profiler
-Version: 1.1.0-1
-Depends: libc
-Source: package/sft1200-boot-profiler
-License: MIT
-Section: utils
-Maintainer: GL-SFT1200 port
-Architecture: all
-Installed-Size: 11218
-Description:  Records monotonic start/end times and return codes for every OpenWrt init
- script, plus netifd, kernel-network and WireGuard hotplug milestones.  A late
- init service saves the raw evidence under /root/boot-profiles after each boot.
- .
- The same rc.common hook releases the leaf init scripts listed in
- /etc/sft1200-boot-async.list from the strictly sequential procd rcS queue.
- This is enabled on install and can be turned off at any time with
- "sft1200-boot-profile async-off"; only the "boot" action is affected, so
- "/etc/init.d/<name> start" keeps its synchronous behaviour.
-Filename: sft1200-boot-profiler_1.1.0-1_all.ipk
-Size: 12394
-SHA256sum: bbda854a1d5c9539d0cf05f4d45489a4be2c132cd7bfeac84f779a083c37d39e
 
