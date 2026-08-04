@@ -4,9 +4,6 @@ Package: shadowsocks-libev-server_3.3.6-3_mips_siflower
 Package: openssh-sftp-server_10.2_p1-1_mips_siflower
 /usr/lib/sftp-server
 
-Package: curl_8.17.0-1_mips_siflower
-/usr/bin/curl
-
 Package: sft1200-amneziawg-compat_1.0.0-3_all
 /usr/bin/wgserver_set_append
 /usr/bin/wgclient_set_append
@@ -27,15 +24,6 @@ Package: dropbear_2026.94-7_mips_siflower
 /etc/config/dropbear
 /etc/init.d/dropbear
 /lib/upgrade/keep.d/dropbear
-
-Package: sft1200-modem-ids_1.0.0-3_all
-/usr/sbin/sft1200-modem-ids
-/usr/lib/sft1200-modem-ids/tests/synthetic.sh
-/usr/lib/sft1200-modem-ids/modem-ids.sh
-/usr/share/sft1200-modem-ids/ids.tab
-/etc/init.d/sft1200-modem-ids
-/etc/sft1200-modem-ids.conf
-/etc/hotplug.d/usb/20-sft1200-modem-ids
 
 Package: sft1200-cpu-ondemand_1.0.0-3_all
 /etc/init.d/cpu-ondemand
@@ -196,9 +184,6 @@ Package: sft1200-boot-profiler_1.1.0-3_all
 /etc/hotplug.d/iface/00-sft1200-boot-profiler
 /etc/hotplug.d/wireguard/00-sft1200-boot-profiler
 
-Package: libcurl_8.17.0-1_mips_siflower
-/usr/lib/libcurl.so.4.8.0
-
 Package: zlib-dev_1.3.2-2_mips_siflower
 /usr/include/zlib.h
 /usr/include/zconf.h
@@ -215,17 +200,11 @@ Package: sft1200-modem-ids_1.0.0-4_all
 /etc/sft1200-modem-ids.conf
 /etc/hotplug.d/usb/20-sft1200-modem-ids
 
-Package: libgpg-error_1.61-1_mips_siflower
-/usr/lib/libgpg-error.so.0.42.1
-
 Package: ca-bundle_20260601-1_all
 /etc/ssl/certs/ca-certificates.crt
 
 Package: openssl-util_1.1.1zh-4_mips_siflower
 /usr/bin/openssl
-
-Package: libgcrypt_1.12.2-1_mips_siflower
-/usr/lib/libgcrypt.so.20.7.2
 
 Package: amneziawg-tools_3.0.20260730-2_mips_siflower
 /usr/bin/awg
