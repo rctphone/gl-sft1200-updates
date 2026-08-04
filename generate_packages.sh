@@ -46,8 +46,17 @@ extract_control_from_ipk() {
         sed -i "s/^Description:/Description: $tag /" "$control_file"
     fi
 
-    # Append the control file contents to the output file
-    cat "$control_file" >> "$output_file"
+    # Append the control file contents to the output file.
+    #
+    # A paragraph break inside Description must be written as " ." -- a line
+    # holding only whitespace terminates the record for opkg, which then never
+    # reaches Filename and reports "does not have a valid filename field".
+    # Three packages shipped that way, including gl-sft1200-amneziawg-compat,
+    # which was therefore uninstallable from this feed for as long as it has
+    # been in it, with nothing to say so: `opkg list` and `list-upgradable`
+    # only need Package and Version, so the package looked perfectly present
+    # right up until someone tried to install it.
+    sed 's/^[[:space:]]*$/ ./' "$control_file" >> "$output_file"
 
     # Add the Filename field to the output file
     echo "Filename: $filename" >> "$output_file"

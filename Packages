@@ -84,7 +84,7 @@ Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT
  4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
  boot and on USB hotplug, and then reconciles interface-to-driver assignment
  because a dynamic id cannot carry an interface number.
- 
+ .
  Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
  which neither the stock firmware nor mainline Linux knows.  Devices outside
  the table are never touched.
@@ -206,7 +206,7 @@ Maintainer: GL-SFT1200 port
 Architecture: all
 Installed-Size: 16996
 Description:  Enables AmneziaWG in the stock GL.iNet web UI on GL-SFT1200 firmware 4.8.3.
- 
+ .
  Adds the type=1 dispatch to the wgclient/wgserver netifd protocol handlers,
  installs GL's obfuscation append helpers and registers a Lua RPC sidecar that
  stores the pasted obfuscation parameters. Regular WireGuard (type=0) keeps its
@@ -304,7 +304,7 @@ Installed-Size: 11218
 Description:  Records monotonic start/end times and return codes for every OpenWrt init
  script, plus netifd, kernel-network and WireGuard hotplug milestones.  A late
  init service saves the raw evidence under /root/boot-profiles after each boot.
- 
+ .
  The same rc.common hook releases the leaf init scripts listed in
  /etc/sft1200-boot-async.list from the strictly sequential procd rcS queue.
  This is enabled on install and can be turned off at any time with
