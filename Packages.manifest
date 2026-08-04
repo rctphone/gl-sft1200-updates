@@ -28,9 +28,6 @@ Package: sft1200-modem-ids_1.0.0-1_all
 Package: iperf3_3.21-1_mips_siflower
 /usr/bin/iperf3
 
-Package: sft1200-cpu-ondemand_1.0.0-1_all
-/etc/init.d/cpu-ondemand
-
 Package: libopenssl-conf_1.1.1zh-4_mips_siflower
 /etc/ssl/openssl.cnf
 
@@ -189,9 +186,6 @@ Package: ca-bundle_20260601-1_all
 
 Package: openssl-util_1.1.1zh-4_mips_siflower
 /usr/bin/openssl
-
-Package: sft1200-network-tuning_1.0.0-1_all
-/etc/init.d/network-tuning
 
 Package: amneziawg-tools_3.0.20260730-2_mips_siflower
 /usr/bin/awg

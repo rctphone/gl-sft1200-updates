@@ -108,19 +108,6 @@ Filename: iperf3_3.21-1_mips_siflower.ipk
 Size: 54670
 SHA256sum: ba7fc8c19a53d9bda27219d839de35252f6b8b5d3a93026a7c3f755267b25c78
 
-Package: sft1200-cpu-ondemand
-Version: 1.0.0-1
-Depends: libc
-Source: package/sft1200-cpu-ondemand
-Section: utils
-Architecture: all
-Installed-Size: 767
-Description:  CPU frequency and IRQ optimization for SFT1200.
- Sets ondemand governor 800-1100MHz, distributes IRQ/RPS across all cores.
-Filename: sft1200-cpu-ondemand_1.0.0-1_all.ipk
-Size: 1512
-SHA256sum: ff67318904cc06c276dc704120fa68938b3aa3d7ec8a054ee79b2824086e3c2e
-
 Package: libopenssl-conf
 Version: 1.1.1zh-4
 Depends: libc, libopenssl
@@ -245,18 +232,6 @@ Description:  The OpenSSL Project is a collaborative effort to develop a robust,
 Filename: openssl-util_1.1.1zh-4_mips_siflower.ipk
 Size: 255083
 SHA256sum: 6b564efe1e688416e23a801fe7e6be1e29e0bb013bdbecce43524d93f5158ecc
-
-Package: sft1200-network-tuning
-Version: 1.0.0-1
-Depends: libc
-Source: package/sft1200-network-tuning
-Section: utils
-Architecture: all
-Installed-Size: 668
-Description:  Network buffer, TCP, conntrack and memory tuning for SFT1200 VPN workloads.
-Filename: sft1200-network-tuning_1.0.0-1_all.ipk
-Size: 1383
-SHA256sum: d8fd32d610acd8d2c5e5cb752f61b52d0fee8f982d7090d17fa6fca52b48530f
 
 Package: amneziawg-tools
 Version: 3.0.20260730-2
