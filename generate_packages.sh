@@ -52,6 +52,14 @@ extract_control_from_ipk() {
     # Add the Filename field to the output file
     echo "Filename: $filename" >> "$output_file"
 
+    # Size and SHA256sum are what opkg checks a download against.  Without
+    # them it installs whatever it received -- a truncated transfer or a
+    # substituted file goes in silently.  They were present in the published
+    # index but this script never wrote them, so every regeneration quietly
+    # dropped both fields from every entry.
+    echo "Size: $(wc -c < "$ipk_file" | tr -d ' ')" >> "$output_file"
+    echo "SHA256sum: $(sha256sum "$ipk_file" | cut -d' ' -f1)" >> "$output_file"
+
     # Clean up temporary files
     rm temp.tar control.tar.gz "$control_file"
     echo "" >> "$output_file" # Add an empty line between entries
