@@ -1,5 +1,27 @@
+Package: sft1200-modem-ids_1.0.0-2_all
+/usr/sbin/sft1200-modem-ids
+/usr/lib/sft1200-modem-ids/tests/synthetic.sh
+/usr/lib/sft1200-modem-ids/modem-ids.sh
+/usr/share/sft1200-modem-ids/ids.tab
+/etc/init.d/sft1200-modem-ids
+/etc/hotplug.d/usb/20-sft1200-modem-ids
+
 Package: openssh-sftp-server_10.2_p1-1_mips_siflower
 /usr/lib/sftp-server
+
+Package: sft1200-amneziawg-compat_1.0.0-3_all
+/usr/bin/wgserver_set_append
+/usr/bin/wgclient_set_append
+/usr/lib/oui-httpd/rpc/wg-client
+/usr/lib/lua/gl_sft1200_awg/params.lua
+/usr/lib/gl-sft1200-amneziawg/manifest
+/usr/lib/gl-sft1200-amneziawg/tests/params_test.lua
+/usr/lib/gl-sft1200-amneziawg/tests/paths
+/usr/lib/gl-sft1200-amneziawg/tests/synthetic.sh
+/usr/lib/gl-sft1200-amneziawg/awg-compat.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wgclient.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wgserver.sh
+/usr/lib/gl-sft1200-amneziawg/templates/wg-client-validator.lua
 
 Package: dropbear_2026.94-7_mips_siflower
 /usr/sbin/dropbear
@@ -11,19 +33,11 @@ Package: dropbear_2026.94-7_mips_siflower
 Package: shadowsocks-libev-server_3.3.6-2_mips_siflower
 /usr/bin/ss-server
 
-Package: sft1200-cpu-perf_1.0.0-2_all
-/etc/init.d/cpu-perf
+Package: sft1200-cpu-ondemand_1.0.0-3_all
+/etc/init.d/cpu-ondemand
 
 Package: zlib_1.3.2-2_mips_siflower
 /usr/lib/libz.so.1.3.2
-
-Package: sft1200-modem-ids_1.0.0-1_all
-/usr/sbin/sft1200-modem-ids
-/usr/lib/sft1200-modem-ids/tests/synthetic.sh
-/usr/lib/sft1200-modem-ids/modem-ids.sh
-/usr/share/sft1200-modem-ids/ids.tab
-/etc/init.d/sft1200-modem-ids
-/etc/hotplug.d/usb/20-sft1200-modem-ids
 
 Package: iperf3_3.21-1_mips_siflower
 /usr/bin/iperf3
@@ -167,19 +181,6 @@ Package: zlib-dev_1.3.2-2_mips_siflower
 /usr/include/zconf.h
 /usr/lib/pkgconfig/zlib.pc
 /usr/lib/libz.a
-
-Package: gl-sft1200-amneziawg-compat_1.0.0-2_all
-/usr/bin/wgserver_set_append
-/usr/bin/wgclient_set_append
-/usr/lib/oui-httpd/rpc/wg-client
-/usr/lib/lua/gl_sft1200_awg/params.lua
-/usr/lib/gl-sft1200-amneziawg/manifest
-/usr/lib/gl-sft1200-amneziawg/tests/params_test.lua
-/usr/lib/gl-sft1200-amneziawg/tests/synthetic.sh
-/usr/lib/gl-sft1200-amneziawg/awg-compat.sh
-/usr/lib/gl-sft1200-amneziawg/templates/wgclient.sh
-/usr/lib/gl-sft1200-amneziawg/templates/wgserver.sh
-/usr/lib/gl-sft1200-amneziawg/templates/wg-client-validator.lua
 
 Package: ca-bundle_20260601-1_all
 /etc/ssl/certs/ca-certificates.crt

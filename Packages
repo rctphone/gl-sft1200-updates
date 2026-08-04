@@ -1,3 +1,24 @@
+Package: sft1200-modem-ids
+Version: 1.0.0-2
+Depends: libc
+Source: package/sft1200-modem-ids
+License: MIT
+Section: net
+Maintainer: GL-SFT1200 port
+Architecture: all
+Installed-Size: 31294
+Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
+ 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
+ boot and on USB hotplug, and then reconciles interface-to-driver assignment
+ because a dynamic id cannot carry an interface number.
+ .
+ Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
+ which neither the stock firmware nor mainline Linux knows.  Devices outside
+ the table are never touched.
+Filename: sft1200-modem-ids_1.0.0-2_all.ipk
+Size: 32454
+SHA256sum: 433a7489902baaec8a3966c7f634edb39d1af95d50da3a33dade0530acf16dae
+
 Package: openssh-sftp-server
 Version: 10.2_p1-1
 Depends: libc, libopenssl, zlib
@@ -11,6 +32,29 @@ Description:  The standalone OpenSSH SFTP subsystem used by Dropbear.
 Filename: openssh-sftp-server_10.2_p1-1_mips_siflower.ipk
 Size: 61848
 SHA256sum: 4ce8c9c8bb4c87c16b3ecd8fc265b4f63ea95ed6b1431eaa8ef208aea00d5ec8
+
+Package: sft1200-amneziawg-compat
+Version: 1.0.0-3
+Depends: libc, amneziawg-tools, kmod-amneziawg
+Conflicts: gl-sft1200-amneziawg-compat
+Source: package/sft1200-amneziawg-compat
+License: Proprietary
+Section: net
+Maintainer: GL-SFT1200 port
+Architecture: all
+Installed-Size: 18107
+Description:  Enables AmneziaWG in the stock GL.iNet web UI on GL-SFT1200 firmware 4.8.3.
+ .
+ Adds the type=1 dispatch to the wgclient/wgserver netifd protocol handlers,
+ installs GL's obfuscation append helpers and registers a Lua RPC sidecar that
+ stores the pasted obfuscation parameters. Regular WireGuard (type=0) keeps its
+ original code path; the stock wg-client.so is left untouched.
+ .
+ Renamed from gl-sft1200-amneziawg-compat. Remove that package first; opkg
+ refuses to install this one while it is present.
+Filename: sft1200-amneziawg-compat_1.0.0-3_all.ipk
+Size: 19294
+SHA256sum: 29fba5f7f73ed1d9960ed2a8112737e233f5d5324e02547a391525fcb9dbd117
 
 Package: dropbear
 Version: 2026.94-7
@@ -42,19 +86,26 @@ Filename: shadowsocks-libev-server_3.3.6-2_mips_siflower.ipk
 Size: 603685
 SHA256sum: 46a408ad816df7ce880a25f20912f1e8983f2feebb7e8d146d893c4fd0061d06
 
-Package: sft1200-cpu-perf
-Version: 1.0.0-2
+Package: sft1200-cpu-ondemand
+Version: 1.0.0-3
 Depends: libc
-Source: package/sft1200-cpu-perf
+Conflicts: sft1200-cpu-perf
+Source: package/sft1200-cpu-ondemand
 Section: utils
 Architecture: all
-Installed-Size: 1087
-Description:  CPU frequency and IRQ/RPS optimization for SFT1200.
- Uses the ondemand governor in the verified 800-1000MHz range.
- Distributes packet processing across the online MIPS InterAptiv CPUs via RPS/XPS.
-Filename: sft1200-cpu-perf_1.0.0-2_all.ipk
-Size: 1876
-SHA256sum: 76555eb324ff30f061f1116f38950cd2f622b9a16ef5b69d3117bec7593af91d
+Installed-Size: 1781
+Description:  CPU frequency and IRQ/RPS tuning for the GL-SFT1200 (SiFlower sf19a28).
+ .
+ Selects the ondemand governor and caps it at 1000MHz, splits the two GMAC
+ interrupts across CPU0/CPU1, and spreads RPS/XPS over the logical CPUs which
+ the running kernel actually brought online.
+ .
+ Renamed from sft1200-cpu-perf, which set the ondemand governor despite its
+ name. Remove that package first; opkg refuses to install this one while it
+ is present.
+Filename: sft1200-cpu-ondemand_1.0.0-3_all.ipk
+Size: 2720
+SHA256sum: 040082c2c0b06f19441aa2cf46b358a9948ade333cc48beec03f4bbea225deb3
 
 Package: zlib
 Version: 1.3.2-2
@@ -70,27 +121,6 @@ Description:  zlib is a lossless data-compression library.
 Filename: zlib_1.3.2-2_mips_siflower.ipk
 Size: 41621
 SHA256sum: 2f4bab563b6f6345e734702bc73af900330ac4a6a55f82062dfed3f1316164e6
-
-Package: sft1200-modem-ids
-Version: 1.0.0-1
-Depends: libc
-Source: package/sft1200-modem-ids
-License: MIT
-Section: net
-Maintainer: GL-SFT1200 port
-Architecture: all
-Installed-Size: 26078
-Description:  Registers the qmi_wwan and option device ids that the stock GL-SFT1200
- 4.14.90 kernel is missing through the drivers' new_id sysfs interface, at
- boot and on USB hotplug, and then reconciles interface-to-driver assignment
- because a dynamic id cannot carry an interface number.
- .
- Covers 164 devices, including the Dell DW5821e in Telit mode (1bc7:1910),
- which neither the stock firmware nor mainline Linux knows.  Devices outside
- the table are never touched.
-Filename: sft1200-modem-ids_1.0.0-1_all.ipk
-Size: 27155
-SHA256sum: fe171077546371d6eea8628faabd93548c649ba8888aeb34f37723720283d92c
 
 Package: iperf3
 Version: 3.21-1
@@ -182,25 +212,6 @@ Description:  zlib is a lossless data-compression library.
 Filename: zlib-dev_1.3.2-2_mips_siflower.ipk
 Size: 84667
 SHA256sum: 2e40eec5bba2154ec215f930bf0be8c1afa9c988e964575aef39d10629acb41e
-
-Package: gl-sft1200-amneziawg-compat
-Version: 1.0.0-2
-Depends: libc, amneziawg-tools, kmod-amneziawg
-Source: package/gl-sft1200-amneziawg-compat
-License: Proprietary
-Section: net
-Maintainer: GL-SFT1200 port
-Architecture: all
-Installed-Size: 16996
-Description:  Enables AmneziaWG in the stock GL.iNet web UI on GL-SFT1200 firmware 4.8.3.
- .
- Adds the type=1 dispatch to the wgclient/wgserver netifd protocol handlers,
- installs GL's obfuscation append helpers and registers a Lua RPC sidecar that
- stores the pasted obfuscation parameters. Regular WireGuard (type=0) keeps its
- original code path; the stock wg-client.so is left untouched.
-Filename: gl-sft1200-amneziawg-compat_1.0.0-2_all.ipk
-Size: 18164
-SHA256sum: 250b06b893e08e005c60f71b821d57db02e73a2ac4a1aaccc302d6383f9478e5
 
 Package: ca-bundle
 Version: 20260601-1
