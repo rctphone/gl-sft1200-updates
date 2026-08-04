@@ -279,16 +279,6 @@ Filename: openssl-util_1.1.1zh-4_mips_siflower.ipk
 Size: 255083
 SHA256sum: 6b564efe1e688416e23a801fe7e6be1e29e0bb013bdbecce43524d93f5158ecc
 
-Package: kmod-amneziawg
-Version: 4.14.90+3.0.20260731-04-4
-Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4, kmod-ipt-hashlimit
-Section: kernel
-Architecture: mips_siflower
-Description: AmneziaWG v3 kernel module with DPI obfuscation
-Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-4_mips_siflower.ipk
-Size: 141177
-SHA256sum: f73946c38794a965e67374b614dc5c8fa582adbc71b37b0640c215039e2fc14f
-
 Package: kmod-wireguard
 Version: 4.14.90+1.0.20211208-2
 Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel4, kmod-udptunnel6
@@ -306,8 +296,8 @@ Section: net
 Architecture: mips_siflower
 Description: AmneziaWG userspace tools (awg, awg-quick)
 Filename: amneziawg-tools_3.0.20260730-2_mips_siflower.ipk
-Size: 41578
-SHA256sum: 851c8082b92ad9e626d524dabb938dadafb39e27e109eaaff47f5aa611f19822
+Size: 41570
+SHA256sum: 406412e7af853b5d0fb43f43bbce638f671a3ca2beae119ebd31c1f8cf5844ea
 
 Package: amneziawg
 Version: 3.0.20260730-2
@@ -316,8 +306,18 @@ Section: net
 Architecture: all
 Description: AmneziaWG VPN meta-package
 Filename: amneziawg_3.0.20260730-2_all.ipk
-Size: 632
-SHA256sum: c43a79625ffd74ad747fc324ddcdeb696f190ae7b14fa69437c44fd50c396e9f
+Size: 631
+SHA256sum: f9a86388c99a269bebca847ef87ddaf83395e037f76eeba650286df0d42f0d53
+
+Package: kmod-amneziawg
+Version: 4.14.90+3.0.20260731-04-5
+Depends: kernel (= 4.14.90-1-70b4fffdfc0fafbf0f0ab09be2a54a8f), kmod-udptunnel6, kmod-udptunnel4
+Section: kernel
+Architecture: mips_siflower
+Description: AmneziaWG v3 kernel module with DPI obfuscation
+Filename: kmod-amneziawg_4.14.90+3.0.20260731-04-5_mips_siflower.ipk
+Size: 141154
+SHA256sum: 971ca5211d5e961c76c35e3f78c4c56367de307871abbbf241b8904e3cbcc493
 
 Package: dropbearconvert
 Version: 2026.94-7
